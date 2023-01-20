@@ -9,7 +9,6 @@
                                                    Create beautiful ui particles!
   
                                                              By @Synitx     
-                                                 Please don't re-sell this product
 
 ```
 
@@ -112,7 +111,7 @@ Emitter:SetRotation(360)
   
 ```lua
  Emitter:SetAcceleration(UDim2.fromOffset(0,30))
-   
+```
    
 ### How to emit a particle?
    
