@@ -10,6 +10,7 @@
           Create beautiful ui particles!
   
                     By @Synitx     
+         Please don't re-sell this product
 
 ]]--
 
@@ -137,7 +138,14 @@ function System.new(position)
 		if not amount then amount = Settings.Amount end
 		local player = game.Players.LocalPlayer
 		local playerUI
-		if not player:FindFirstChild("PlayerGui") then
+		if not player then
+			playerUI = game.StarterGui:FindFirstChild("2DEmitter")
+			if not playerUI then
+				playerUI = Instance.new("ScreenGui")
+				playerUI.Name = "2DEmitter"
+				playerUI.Parent = game.StarterGui
+			end
+		elseif not player:FindFirstChild("PlayerGui") then
 			playerUI = game.StarterGui:FindFirstChild("2DEmitter")
 			if not playerUI then
 				playerUI = Instance.new("ScreenGui")
