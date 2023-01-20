@@ -12,8 +12,8 @@
 
 ```
 
-Click **[here](https://www.roblox.com/library/12215556043/2D-Emitter-V2)** to get the module
-Click **[here](https://create.roblox.com/marketplace/asset/12214425910/2DEmitter)**to get the plugin.
+Click [here](https://www.roblox.com/library/12215556043/2D-Emitter-V2) to get the module\n
+Click [here](https://create.roblox.com/marketplace/asset/12214425910/2DEmitter)to get the plugin.
 
 Lets start by requiring the module.
   
