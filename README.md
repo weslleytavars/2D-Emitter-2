@@ -41,11 +41,11 @@ Lets start by requiring the module.
      Size = 3,
      LifeTime = Vector2.new(5,15),
      Speed = 0.3,
-     Spread = false,
      Color = { Color3.new(255,255,255), Color3.new(0,255,0) },
      Amount = 15,
-     Corner = UDim.new(0,0),
-     SetParticleType = Emitter.SetParticleType.Default
+     Texture = 0,
+     Acceleration = UDim2.fromOffset(0,0),
+     Rotation = 0
   })
   ```
   
