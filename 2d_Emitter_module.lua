@@ -17,6 +17,8 @@
 local System = {}
 local tweenService = game:GetService("TweenService")
 
+local Randomlib = Random.new()
+
 function System.new(position)
 	local Settings = { -- Default values do not touch
 		Amount = 10,
@@ -173,10 +175,14 @@ function System.new(position)
 			if Settings.Colors and #Settings.Colors > 0 then
 				frame.ImageColor3 = Settings.Colors[math.random(1,#Settings.Colors)]
 			end
-			local random = math.random(Settings.LifeTime.X,Settings.LifeTime.Y)
+			
+			local random = Randomlib:NextNumber(Settings.LifeTime.X, Settings.LifeTime.Y)
 			local newPos = UDim2.new(0,0,0,-random)
 			if (Settings.Acceleration.X.Offset ~= 0) or Settings.Acceleration.Y.Offset ~= 0 then
-				newPos = Settings.Acceleration + UDim2.fromOffset(math.random(Settings.LifeTime.X,Settings.LifeTime.Y),math.random(Settings.LifeTime.X,Settings.LifeTime.Y))
+				newPos = Settings.Acceleration + UDim2.fromOffset(
+					Randomlib:NextNumber(Settings.LifeTime.X, Settings.LifeTime.Y),
+					Randomlib:NextNumber(Settings.LifeTime.X, Settings.LifeTime.Y)
+				)
 			end
 			local tween = tweenService:Create(frame,TweenInfo.new(Settings.Speed,Enum.EasingStyle.Linear,Enum.EasingDirection.In,0,false,0),{
 				Position = frame.Position + newPos,
