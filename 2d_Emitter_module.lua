@@ -84,10 +84,8 @@ function System.new(position)
 		end
 	end
 	function items:SetAcceleration(Acceleration:UDim2)
-		if Acceleration then
-			if typeof(options.Acceleration) == "UDim2" then
-				Settings.Acceleration = UDim2.fromOffset(Acceleration.X.Offset,Acceleration.Y.Offset)
-			end
+		if Acceleration and typeof(Acceleration) == "UDim2" then
+			Settings.Acceleration = UDim2.fromOffset(Acceleration.X.Offset,Acceleration.Y.Offset)
 		end
 	end
 	function items:Set(options)
@@ -118,6 +116,9 @@ function System.new(position)
 			if options.Acceleration then
 				if typeof(options.Acceleration) == "UDim2" then
 					Settings.Acceleration = UDim2.fromOffset(options.Acceleration.X.Offset,options.Acceleration.Y.Offset)
+				else
+					Settings.Acceleration = UDim2.fromOffset(0, 0)
+					warn("[2DEmit]: Acceleration must be an UDim2!"
 				end
 			end
 			if options.Texture then
